@@ -2,6 +2,8 @@
 
 Raycast extension for Dida365/TickTick, built strictly on the public Open API documented at <https://developer.dida365.com/docs#/openapi> (TickTick: <https://developer.ticktick.com/docs#/openapi>). No private endpoints.
 
+![Dida 365 in Raycast](assets/usage.png)
+
 ## Setup
 
 1. Token: dida365.com web app → avatar → 设置 → 账号 → API Token (TickTick: Settings → Account → API Token).
