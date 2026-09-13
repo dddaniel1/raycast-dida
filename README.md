@@ -98,3 +98,7 @@ npm test
 npm run lint
 npm run build
 ```
+
+## License
+
+MIT © 2026 Daniel
