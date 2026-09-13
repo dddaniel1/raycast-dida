@@ -1,0 +1,196 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "type": "module",
+  "name": "dida",
+  "title": "Dida 365",
+  "description": "Manage Dida365/TickTick tasks and projects from Raycast, built on the public Open API.",
+  "icon": "icon.png",
+  "author": "daniel",
+  "license": "MIT",
+  "version": "1.0.0",
+  "categories": [
+    "Productivity"
+  ],
+  "commands": [
+    {
+      "name": "tasks",
+      "title": "Tasks",
+      "description": "Browse, search, complete and edit tasks",
+      "mode": "view"
+    },
+    {
+      "name": "today-tasks",
+      "title": "Today Tasks",
+      "description": "Browse tasks due today",
+      "mode": "view"
+    },
+    {
+      "name": "quick-add-task",
+      "title": "Quick Add Task",
+      "description": "Create a task from one line, e.g. 明天下午3点开会 #工作 !high ~每周一、三",
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "input",
+          "placeholder": "明天下午3点开会 #工作 !high ~每周一、三",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "create-task",
+      "title": "Create Task",
+      "description": "Create a task with a form",
+      "mode": "view"
+    },
+    {
+      "name": "projects",
+      "title": "Projects",
+      "description": "Browse and manage projects",
+      "mode": "view"
+    },
+    {
+      "name": "create-project",
+      "title": "Create Project",
+      "description": "Create a project",
+      "mode": "view"
+    },
+    {
+      "name": "clipboard-to-task",
+      "title": "Clipboard to Task",
+      "description": "Turn clipboard text into a task",
+      "mode": "view"
+    },
+    {
+      "name": "templates",
+      "title": "Task Templates",
+      "description": "Apply and manage task templates",
+      "mode": "view"
+    },
+    {
+      "name": "statistics",
+      "title": "Statistics",
+      "description": "Task statistics",
+      "mode": "view"
+    },
+    {
+      "name": "menu-bar",
+      "title": "Dida Menu Bar",
+      "description": "Today / overdue / high-priority task counts in the menu bar",
+      "mode": "menu-bar",
+      "interval": "5m"
+    }
+  ],
+      "preferences": [
+    {
+      "name": "token",
+      "title": "API Token",
+      "description": "Dida365/TickTick Open API token (dida365.com → 设置 → 开放平台)",
+      "type": "password",
+      "required": true
+    },
+    {
+      "name": "timezone",
+      "title": "Default Timezone",
+      "description": "Timezone used for task dates.",
+      "type": "dropdown",
+      "required": false,
+      "default": "system",
+      "data": [
+        { "title": "System Default", "value": "system" },
+        { "title": "UTC", "value": "UTC" },
+        { "title": "Beijing / Shanghai", "value": "Asia/Shanghai" },
+        { "title": "Hong Kong", "value": "Asia/Hong_Kong" },
+        { "title": "Taipei", "value": "Asia/Taipei" },
+        { "title": "Tokyo", "value": "Asia/Tokyo" },
+        { "title": "Seoul", "value": "Asia/Seoul" },
+        { "title": "Singapore", "value": "Asia/Singapore" },
+        { "title": "Bangkok", "value": "Asia/Bangkok" },
+        { "title": "Jakarta", "value": "Asia/Jakarta" },
+        { "title": "Kolkata", "value": "Asia/Kolkata" },
+        { "title": "Dubai", "value": "Asia/Dubai" },
+        { "title": "London", "value": "Europe/London" },
+        { "title": "Paris", "value": "Europe/Paris" },
+        { "title": "Berlin", "value": "Europe/Berlin" },
+        { "title": "Moscow", "value": "Europe/Moscow" },
+        { "title": "New York", "value": "America/New_York" },
+        { "title": "Chicago", "value": "America/Chicago" },
+        { "title": "Denver", "value": "America/Denver" },
+        { "title": "Los Angeles", "value": "America/Los_Angeles" },
+        { "title": "Toronto", "value": "America/Toronto" },
+        { "title": "São Paulo", "value": "America/Sao_Paulo" },
+        { "title": "Sydney", "value": "Australia/Sydney" },
+        { "title": "Auckland", "value": "Pacific/Auckland" }
+      ]
+    },
+        {
+          "name": "region",
+          "title": "API Region",
+          "description": "China uses api.dida365.com, International uses api.ticktick.com. Same Open API.",
+          "type": "dropdown",
+      "required": false,
+      "default": "china",
+      "data": [
+        {
+          "title": "中国 (dida365.com)",
+          "value": "china"
+        },
+        {
+          "title": "International (ticktick.com)",
+          "value": "international"
+        }
+          ]
+        },
+        {
+          "name": "qaProjectMarker",
+          "title": "Quick Add Project Marker",
+          "description": "Marker prefix for projects in Quick Add. Default: #",
+          "type": "textfield",
+          "required": false
+        },
+        {
+          "name": "inboxProjectId",
+          "title": "Inbox Project ID",
+          "description": "The Open API project list omits Inbox. Enter this account's Inbox projectId (currently inbox1015263871).",
+          "type": "textfield",
+          "required": false,
+          "default": "inbox1015263871"
+        },
+        {
+          "name": "qaPriorityMarker",
+          "title": "Quick Add Priority Marker",
+          "description": "Marker prefix for priority in Quick Add. Default: !",
+          "type": "textfield",
+          "required": false
+        },
+        {
+          "name": "qaDateMarker",
+          "title": "Quick Add Date Marker",
+          "description": "Marker prefix for dates in Quick Add. Default: @",
+          "type": "textfield",
+          "required": false
+        },
+        {
+          "name": "qaRepeatMarker",
+          "title": "Quick Add Repeat Marker",
+          "description": "Marker prefix for recurrence in Quick Add. Default: ~",
+          "type": "textfield",
+          "required": false
+        }
+      ],
+  "dependencies": {
+    "@raycast/api": "^1.100.0",
+    "@raycast/utils": "^2.3.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.0.0",
+    "typescript": "^5.6.0"
+  },
+  "scripts": {
+    "build": "ray build -e dist -o dist -I",
+    "dev": "ray develop",
+    "lint": "ray lint",
+    "test": "node --experimental-strip-types --test \"src/**/*.test.ts\""
+  }
+}

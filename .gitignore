@@ -1,0 +1,14 @@
+# dependencies
+/node_modules
+/.npm-cache
+
+# Raycast build output
+/dist
+/raycast-env.d.ts
+
+# local tool state
+/.impeccable
+
+# misc
+.DS_Store
+*.log
